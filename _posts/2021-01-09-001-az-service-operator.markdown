@@ -3,7 +3,7 @@ layout: post
 title: Azure Service Operator - provision infrastructure using yaml
 date: 2020-01-09 00:00:00 +0530
 description: Provision your Azure resources using YAML with ASO
-comments: true
+comments: false
 tags: [Azure, Kubernetes]
 ---
 
