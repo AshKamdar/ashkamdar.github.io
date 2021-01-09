@@ -1,0 +1,465 @@
+---
+layout: post
+title: Learning GKE
+date: 2021-01-08 00:00:00 +0530
+description: Learning Google Kubernetes Engine (GKE)
+comments: true
+tags: [Kubernetes, GKE]
+---
+
+<br>
+
+## GCloud Setup
+
+Check gcloud details  
+`glcoud info`
+
+Check projects  
+`gcloud projects list`
+
+Login to gcloud  
+`gcloud auth login`
+
+Set correct default values
+
+```
+gcloud config set compute/region us-west1
+gcloud config set compute/zone us-west1-c
+gcloud config set project learning-gke-295219
+```
+
+[VM Pricing](https://cloud.google.com/compute/vm-instance-pricing)
+
+| Machine type  | vCPUs | Memory | Monthly Price (USD) |
+| :-----------: | :---: | :----: | :-----------------: |
+| n1-standard-1 |   1   | 3.75GB |       \$24.27       |
+|   ---------   |
+| n1-standard-2 |   2   | 7.5GB  |       \$48.54       |
+|   ---------   |
+| e2-standard-2 |   2   |  8GB   |       \$48.91       |
+|   ---------   |
+| n2-standard-2 |   2   |  8GB   |       \$56.72       |
+|   ---------   |
+| n1-highmem-2  |   2   |  13GB  |       \$60.45       |
+|   ---------   |
+| e2-highmem-2  |   2   |  16GB  |       \$65.98       |
+|   ---------   |
+| n2-highmem-2  |   2   |  16GB  |       \$76.51       |
+|   ---------   |
+| n1-standard-4 |   4   |  15GB  |       \$97.09       |
+|   ---------   |
+| e2-standard-4 |   4   |  16GB  |       \$97.83       |
+|   ---------   |
+| n1-highmem-4  |   4   |  26GB  |      \$120.91       |
+|   ---------   |
+| e2-highmem-4  |   4   |  32GB  |      \$131.97       |
+|   ---------   |
+
+Create cluster
+
+```
+gcloud container clusters create dev-gke-001 \
+  --num-nodes=1 \
+  --machine-type=n1-standard-2 \
+  --zone=us-west1-c
+```
+
+Create VPC  
+`gcloud compute networks create kubernetes-cluster --subnet-mode custom`
+
+Create subnet  
+`gcloud compute networks subnets create kubernetes --network kubernetes-cluster --range 10.240.0.0/24`
+
+Check <span style="color: red">kubectl</span> version  
+`kubectl version --client --short`
+
+Change context  
+`kubectl config use-context cka-admin@kubernetes`
+
+## Namespaces
+
+Create namespace  
+`kubectl create namespace ns-1`
+
+Set default namespace  
+`kubectl config set-context --current --namespace=ns-1`
+
+Using selector to filter pods  
+`kubectl get pods -l app=nginx -A`
+
+## Service
+
+A service uses **labels** to select pods
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx # This is how labels are used
+  ports:
+    - port: 80
+```
+
+## Deployment
+
+A Deployment uses **labels** to find pods it is responsible for
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  selector: # selectes pods managed by this Deployment
+    matchLabels:
+      app: nginx
+  template:
+    metadata: # pods created by this Deployment will have this label
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+```
+
+## Annotations
+
+They are used to add metadata to the resource. This metadata is used by tools and kubernetes extensions.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    mytool/mem-size: 1G
+  name: nginx
+[...]
+```
+
+## Pod controllers
+
+- **ReplicaSet:** ensures that a specified number of pod replicas are running at any given time.
+- **Deployment:** enables declarative updates for Pods and ReplicaSets.
+- **StatefulSet:** manages updates of Pods and ReplicaSets, taking care of stateful resources.
+- **DaemonSet:** ensures that all or some nodes are running a copy of a Pod.
+- **Job:** starts pods and ensures they complete.
+- **CronJob:** creates a Job on a time-based schedule.
+
+## Deployment strategies
+
+- Recreate
+- RollingUpdate (default): The goal of this strategy is to update from previous to new version
+  without downtime
+
+## Environment variables
+
+They are used for passing values to container.
+There are many options.
+
+### Option-1: Defining them in manifest files
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+          env:
+            - name: VAR1
+              value: "value1"
+            - name: VAR2
+              value: "value2"
+```
+
+### Option-2: Reading values from ConfigMaps and Secrets
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vars
+data:
+  var1: value1
+  var2: value2
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: passwords
+stringData:
+  pass1: foo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: nginx
+      name: nginx
+      env:
+        - name: VAR1
+          valueFrom:
+            configMapKeyRef:
+              key: var1
+              name: vars
+        - name: VAR2
+          valueFrom:
+            configMapKeyRef:
+              key: var2
+              name: vars
+        - name: PASS1
+          valueFrom:
+            secretKeyRef:
+              key: pass1
+              name: passwords
+```
+
+**Note:** If referenced key is not found in the referenced configmaps
+or secrets, the creation of the deployment will fail. If you want to
+create the deployment even if a value deos not exist (in this case the
+corresponding environment variable will not be defined), you can use
+the `optional` field
+
+```yaml
+- name: PASS2
+  valueFrom:
+    secretKeyRef:
+      key: pass2
+      name: passwords
+      optional: true
+```
+
+### Option-3: Inject values in ConfigMap & Secret as <ins>Environment</ins> variables
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+      name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+      app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        envFrom:
+        - configMapRef:
+            name: vars
+        - secretRef:
+            name: passwords
+        - secretRef:
+            name: notfound
+            optional: true
+```
+
+### Option-4: Referencing values from pod fields
+
+```yaml
+---
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_UID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.uid
+        - name: POD_NODENAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: POD_SERVICEACCOUNTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: POD_HOSTIP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: POD_PODIP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+```
+
+## ConfigMap
+
+Mount contents of configmap as volume in a container
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: www-config
+data:
+  nginx.conf: |
+    server {
+      location / {
+        root /data/www;
+      }
+      location /images/ {
+        root /data;
+      }
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: config-volume
+          configMap: www-config
+      containers:
+        - image: nginx
+          name: nginx
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/nginx/conf.d/
+```
+
+## Secret
+
+Similarly, it is possible to mount contents of secret also as volume in a container
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: passwords
+stringData:
+  password: foobar
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+  spec:
+    volumes:
+      - name: passwords-volume
+        secret:
+          secretName: passwords
+    containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+          - name: passwords-volume
+            mountPath: /etc/passwords
+```
+
+## Autoscaling
+
+Using Horizontal Pod Autoscaler (HPA) for autoscaling
+
+```yaml
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx
+spec:
+  minReplicas: 1
+  maxReplicas: 4
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx
+  targetCPUUtilizationPercentage: 5
+```
+
+Testing HPA by throwing load  
+`while : ; do curl http://localhost:8084; done`
+
+In parallel, check cpu utilization by running command
+
+```
+kubectl top pods
+kubectl get hpa nginx
+```
+
+## Node maintenance mode
+
+Here is how you can put a node in maintenance mode (which will stop hosting pods)  
+`kubectl drain worker-0 --force`
+
+## Quality of Service (QoS) for Pods
+
+- Guaranteed
+- Burstable
+- Best Effort
+
+## Logs
+
+`kubectl logs -l app=nginx --prefix`
+
+<br>
+<br>
