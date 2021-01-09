@@ -9,7 +9,7 @@ tags: [Azure, Kubernetes]
 
 <br>
 
-## Provisiong Resources - The traditional way
+## Provisiong Resources - The traditional way.
 
 Working in a public cloud like Azure is all about using the vast number of services offered by the cloud provider.  
 Broadly these service offerings are categorized as follows
