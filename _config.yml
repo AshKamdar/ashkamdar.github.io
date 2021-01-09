@@ -10,7 +10,7 @@ site-twitter: https://twitter.com/ash_kamdar #if your site has a twitter account
 # Author Settings
 author: Ashish Kamdar
 author-img: ashish-kamdar.png
-about-author: A blog on DevOps with GitLab and Kubernetes.
+about-author: DevOps with Kubernetes.
 
 social-twitter: ash_kamdar
 social-facebook:
@@ -19,7 +19,7 @@ social-linkedin: ashkamdar/
 social-email: ash.kamdar.blog@gmail.com
 
 # Disqus
-discus-identifier: https-ashkamdar-gitlab-io
+discus-identifier: https-ashkamdar-github-io
 
 # Tracker
 analytics: # Google Analytics
