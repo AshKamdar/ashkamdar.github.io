@@ -4,7 +4,7 @@ description: > # ignore newlines until "baseurl:"
   The current focus is technologies like Docker, Kubernetes, GitLab, Istio Service Mesh etc.
 permalink: ':title/'
 baseurl: "" # e.g. /blog
-url: "https://ashkamdar.github.io/flexible-jekyll/" # e.g. http://example.com
+url: "https://ashkamdar.github.io/" # e.g. http://example.com
 site-twitter: https://twitter.com/ash_kamdar #if your site has a twitter account, enter it here
 
 # Author Settings
