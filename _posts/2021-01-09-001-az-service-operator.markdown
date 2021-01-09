@@ -1,15 +1,13 @@
 ---
 layout: post
-title: Azure Service Operator - provision infrastructure using yaml
+title: Azure Service Operator
 date: 2020-01-09 00:00:00 +0530
-description: Provision your Azure resources using YAML with ASO
+description: Provision infrastructure using yaml
 comments: false
 tags: [Azure, Kubernetes]
 ---
 
-<br>
-
-## Provisiong Resources - The traditional way.
+## Provisiong Resources - The traditional way
 
 Working in a public cloud like Azure is all about using the vast number of services offered by the cloud provider.  
 Broadly these service offerings are categorized as follows
