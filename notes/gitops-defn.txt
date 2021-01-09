@@ -1,0 +1,1 @@
+GitOps is a way to do Continuous Delivery. More specifically, it is an operating model for building Cloud Native applications that unify Deployment, Monitoring, and Management.

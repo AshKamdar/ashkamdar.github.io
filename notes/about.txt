@@ -1,0 +1,19 @@
+  {{"
+  Hi, i am **Ashish**
+
+I has been in IT industry for over <ins>two decades</ins>, working in various roles associated with _technology_.
+
+I started my career during days where business IT systems were predominantly implemented using <ins>client-server architectures</ins> and we were just starting to hear about new things like  _interenet_, _world wide web_, _browsers_ and cool new services like _search engine_ and _email_ offered by companies like AltaVista, Yahoo, America Online (AOL) and Hotmail.
+
+Personally, it has been an exciting journey, wherein earlier IT was a small _optional_ part of everyone's life, to today where our life revolves around IT with supported gadgets and devices. 
+
+Professional, the importance of IT as a function of business has changed dramatically. From a small and insignificant back-office function, it has transformed into the most important operation, present right at front and center of every modern business. Today IT is a key differentiator for businesses and it has the power to make or break a business.
+
+But with great power comes great responsibility. So it is imporant to fulfill this responsibility by keeping the IT systems landscape current, so it can support the ever growing needs and demands of businesses as well as its customers.
+
+This can be done by periodically evauating contemporary innovations in **platforms** and **technologies** and embracing them by planning <ins>modernization initiatives</ins> to retire legacy systems.
+
+**I like to think of myself as this person, who has the right knowledge and experience to lead such digital tranformation initiatives and play a key role in modernization of IT system landscapes as we begin this journey of migration from Data centers to Cloud.**""
+
+| markdownify}}
+
