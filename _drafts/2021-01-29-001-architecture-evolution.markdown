@@ -4,7 +4,17 @@ title: From Legacy to Contemporary architectures
 date: 2021-01-29 00:00:00 +0530
 description: A journey into evolution of architectures of Enteprise IT systems
 comments: false
-tags: [Legacy, Monolith, Microservices, Docker, Kubernetes, Opensource]
+tags:
+  [
+    Legacy,
+    Monolith,
+    Microservices,
+    Cloud,
+    DevOps,
+    Docker,
+    Kubernetes,
+    Opensource,
+  ]
 ---
 
 ## Inception
@@ -97,7 +107,7 @@ Today the systems that are prevalent in enterpries, that are based on the old ar
 
 All this has led to enteprises showing a lot of interest in migrating these legacy systems to modern times. Hence there is a proliferation of projects that target such modernization initiatives and all these projects will adopt latest innovations mentioned above.
 
-## Cloud: The great equalizer
+## Cloud computing: The great equalizer
 
 One of the other game changer in all this is the birth of <mark>Cloud computing</mark>.  
 Amazon figured out early in last decade that it could offer its free resources to be used by other enterprses on a pay-per-use basis. This was a win-win as Amazon could make money from their excess capacity while other enterprises would be able to use these servies without big and upfront investment costs.

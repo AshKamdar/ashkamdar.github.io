@@ -1,0 +1,45 @@
+---
+layout: post
+title: DevOps with Azure, GitHub and Kubernetes
+date: 2021-01-29 00:00:00 +0530
+description: A project on microservice architecture using latest tools and technologies
+comments: false
+tags: [Azure, GitHub, Kubernetes]
+---
+
+## Introduction
+
+Having made a case for [adoption of Microservice architecture](/001-architecture-evolution/), let us dive deep into what it takes to implement such type of projects.
+
+They say _the best way to learn something is by doing it_.  
+So lets begin a journey of learning how to implement contemporary architectures with latest tools and technologies available at our disposal today, by doing a sample project.
+
+## Sample Project
+
+Over the years, from my experience, i have observed that the way we learn new technologies and the way it is required to be implemented in enterprise projects differ widely.
+
+Because while learning, the focus is on <u>speed</u> and <u>output</u>. But when applying the same in practical projects, the focus turns to impementing it in _best_, _efficient_ and _secure_ way.
+This is the classic difference between **Knowledge** and **Experience**.  
+Knowledge teaches you <u>what to do</u>, while Experience teaches you <u>what Not to do</u>.
+
+Hence in order to learn in a practical way, let us implement it under the umbrella of doing a sample project for a fictious enterprise.  
+This fictious enterprise will be called **AshLand Inc**.  
+As you may have noticed, the name is just a play on my name and does not bear any resemblence to any existing organization in the world today.
+
+## AshLand Inc.
+
+So our enterprise is a global
+
+## Technology Stack
+
+To start with, we are going to use the following:
+
+- **Cloud:** Azure public cloud
+- **Containerization:** Docker
+- **Git provider:** GitHub
+- **Container registry:** Azure Container Registry (ACR)
+- **Container orchestrator:** Azure Kubernetes Service (AKS)
+- **CI/CD pipelines:** GitHub Actions
+- **Infrastructure automation:** Azure CLI
+
+As we move ahead in the project, we will keep extending the above list
