@@ -29,11 +29,12 @@ As you may have noticed, the name is just a play on my name and does not bear an
 ## AshLand Inc.
 
 So lets assume AshLand Inc. (AINC) is a fortune 500 company based in USA. It has many businesses but its flagship business is selling products online (eCommerce). We will be focusing on this e-commerce business during this project.  
-The eCommerce business does not have a single physical store. It sells all its products online through various channels like website (portal), mobile (app), external partners etc. This is currently supported by their Legacy IT systems, which is based on technologies atleast a decade old now.
+The eCommerce business does not have a single physical store. It sells all its products online through various channels like website (portal), mobile (app), external partners etc. This is currently supported by their Legacy IT systems, which is based on technologies that were put in place atleast a decades ago.
 
-Because of it, the architecture has started showing its age and is unable to support the rapid growth and changes expected by the business. Its CTO has been into conferences and has been hearing talks of how other organizations were facing same issues and they resolved their problems by modernizing their architectures and adopting latest tools and technologies. Also, AINC has most of its IT assets in their own datacenters and they are looking to slowly adopt public cloud and migrate many of its assets to cloud to save cost and benefit from new and innovative services provided by cloud providers.
+Because of it, the architecture has started showing its age and is unable to support the scale and changes expected by the business that is growing rapidly. Its CTO has been into conferences and has been hearing talks of how other organizations were facing similar issues and they resolved their problems by modernizing their architectures and adopting latest tools and technologies.  
+Also, AINC has most of its IT assets in their own datacenters and they are looking to slowly adopt public cloud and migrate many of its assets to cloud, to save cost and benefit from new and innovative services provided by cloud providers.
 
-So the management of AINC has allocated a budget and has commissioned a project to enable them to evaluate modern technologies and its benefits. They have formed a team and task them to create a <u>Minimum Vialble Product (MVP)</u> replicating their existing eCommerce portal.  
+So the management of AINC has allocated a budget and has commissioned a project to enable them to evaluate modern technologies and platforms. This project is named as **Platform Modernization (PMOD)** initiative and to implement it, they have formed a team and tasked the team to create a <u>Minimum Vialble Product (MVP)</u> replicating existing IT setup of their eCommerce business.  
 Next section highlights the technologies used to build this MVP.
 
 ## Technology Stack
@@ -42,10 +43,32 @@ To start with, we are going to use the following:
 
 - **Cloud:** Azure public cloud
 - **Containerization:** Docker
-- **Git provider:** GitHub
+- **Version control (git provider):** GitHub
 - **Container registry:** Azure Container Registry (ACR)
 - **Container orchestrator:** Azure Kubernetes Service (AKS)
 - **CI/CD pipelines:** GitHub Actions
 - **Infrastructure automation:** Azure CLI
 
 As we move ahead in the project, we will keep extending the above list
+
+## Naming Conventions
+
+One of the most important thing in Enterprise projects, is to come up with a consistent naming convention for naming resources. This is different from the learning phase, where you can get away with naming anything you like, as you know what you are creating has a shoft life span and can be deleted soon.
+
+But artifacts created for enteprise projects live till the end of project. And hence it is always better to come up with a proper naming conventions that accurately reflects where those resource belong.
+
+We will be using the following short texts for various things, as shown below
+
+- **Organisation:** Ashland Inc. (ainc)
+- **Location:** East US (eus)
+- **Project:** Platfom Modernization (pmod)
+
+## Environments
+
+For any enterprise project, it is recommended to have at least 3 environments. They are Development, Staging & Production.
+However in this MVP, we will be working with the following 2 environments
+
+- NonProduction (NonProd)
+- Production (Prod)
+
+The <u>NonProd</u> environment will be where the development of new features continues and the <u>Prod</u> environment will be where things that are ready will be deployed for business users to evaluate.
