@@ -16,11 +16,11 @@ So lets begin a journey of learning how to implement contemporary architectures 
 
 ## Sample Project
 
-Over the years, from my experience, i have observed that the way we learn new technologies and the way it is required to be implemented in enterprise projects differ widely.
+**Over the years, from my experience, i have observed that the way we learn new technologies and the way it is required to be implemented in enterprise projects differ widely**.
 
-Because while learning, the focus is on <u>speed</u> and <u>output</u>. But when applying the same in practical projects, the focus turns to impementing it in _best_, _efficient_ and _secure_ way.
-This is the classic difference between **Knowledge** and **Experience**.  
-Knowledge teaches you <u>what to do</u>, while Experience teaches you <u>what Not to do</u>.
+Because while learning, the focus is on <u>speed</u> and <u>output</u>.  
+But when applying the same in practical projects, the focus turns to impementing it in _best_, _efficient_ and _secure_ way.
+This is the classic difference between **Knowledge** and **Experience**. Knowledge teaches us <u>what to do</u>, while Experience teaches us <u>what Not to do</u>.
 
 Hence in order to learn in a practical way, let us implement it under the umbrella of doing a sample project for a fictious enterprise.  
 This fictious enterprise will be called **AshLand Inc**.  
@@ -28,7 +28,13 @@ As you may have noticed, the name is just a play on my name and does not bear an
 
 ## AshLand Inc.
 
-So our enterprise is a global
+So lets assume AshLand Inc. (AINC) is a fortune 500 company based in USA. It has many businesses but its flagship business is selling products online (eCommerce). We will be focusing on this e-commerce business during this project.  
+The eCommerce business does not have a single physical store. It sells all its products online through various channels like website (portal), mobile (app), external partners etc. This is currently supported by their Legacy IT systems, which is based on technologies atleast a decade old now.
+
+Because of it, the architecture has started showing its age and is unable to support the rapid growth and changes expected by the business. Its CTO has been into conferences and has been hearing talks of how other organizations were facing same issues and they resolved their problems by modernizing their architectures and adopting latest tools and technologies. Also, AINC has most of its IT assets in their own datacenters and they are looking to slowly adopt public cloud and migrate many of its assets to cloud to save cost and benefit from new and innovative services provided by cloud providers.
+
+So the management of AINC has allocated a budget and has commissioned a project to enable them to evaluate modern technologies and its benefits. They have formed a team and task them to create a <u>Minimum Vialble Product (MVP)</u> replicating their existing eCommerce portal.  
+Next section highlights the technologies used to build this MVP.
 
 ## Technology Stack
 
