@@ -16,14 +16,17 @@ So lets begin a journey of learning how to implement contemporary architectures 
 
 ## Sample Project
 
-**Over the years, from my experience, i have observed that the way we learn new technologies and the way it is required to be implemented in enterprise projects differ widely**.
+**Over the years, from my experience, i have observed that the way we learn new technologies and the way they need to be implemented in enterprise projects differ widely**.
 
 Because while learning, the focus is on <u>speed</u> and <u>output</u>.  
 But when applying the same in practical projects, the focus turns to impementing it in _best_, _efficient_ and _secure_ way.
 This is the classic difference between **Knowledge** and **Experience**. Knowledge teaches us <u>what to do</u>, while Experience teaches us <u>what Not to do</u>.
 
-Hence in order to learn in a practical way, let us implement it under the umbrella of doing a sample project for a fictious enterprise.  
-This fictious enterprise will be called **AshLand Inc**.  
+This experience comes in handy while executing enterprise projects, as you have to factor many things like standards, conventions, security, access control, capacity, cost control, best practices, documentation, collaboration with business teams etc.  
+Also, these projects are costly to implemnet and hence they will be in use for a very long time.
+
+So let us increase both knowledge and experience by practically implementing a sample project for a fictious enterprise.  
+This fictious enterprise is called **AshLand Inc**.  
 As you may have noticed, the name is just a play on my name and does not bear any resemblence to any existing organization in the world today.
 
 ## AshLand Inc.
