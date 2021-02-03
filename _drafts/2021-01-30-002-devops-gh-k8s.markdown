@@ -68,10 +68,10 @@ We will be using the following short texts for various things, as shown below
 
 ## Environments
 
-For any enterprise project, it is recommended to have at least 3 environments. They are Development, Staging & Production.
-However in this MVP, we will be working with the following 2 environments
+For any enterprise project, it is recommended to have multiple environments.  
+However in our case, we will be working with 2 environments
 
-- NonProduction (NonProd)
-- Production (Prod)
+- Non-Production (NPD)
+- Production (PRD)
 
-The <u>NonProd</u> environment will be where the development of new features continues and the <u>Prod</u> environment will be where things that are ready will be deployed for business users to evaluate.
+The <u>NonProd</u> environment will be where the development of new features continues and the <u>Prod</u> environment will be where, things that are ready, will be deployed for business users to evaluate.
