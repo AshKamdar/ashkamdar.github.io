@@ -22,7 +22,7 @@ ACR will be provisioned with following properties
 
 <u>Note:</u> To understand resource naming convention further, please [visit this link](/004-provision-az-resources/)
 
-### Create pipeline
+### Pipeline
 
 Create a file named **20-dev-acr.yml** in <u>repoPlatform</u>, as shown below.
 
@@ -70,7 +70,7 @@ On commit of this file on repoPlatform, GitHub actions will run and execute this
 
 | ![](/assets/img/005/005-az-acr-pipeline-executed-1.png) |
 
-All jobs (two) in pipeline completed
+All steps (two) in pipeline are completed
 
 | ![](/assets/img/005/005-az-acr-pipeline-executed-2.png) |
 
