@@ -4,7 +4,7 @@ title: Create Infrastructure pipeline with GitHub Actions
 date: 2021-01-29 00:00:00 +0530
 description: Provision azure resources using github actions.
 comments: false
-tags: [Azure, GitHub, CI/CD, GitHub Actions]
+tags: [Azure, GitHub, CI/CD, GitHub Actions, Crossplane, AzureServiceOperator]
 ---
 
 ## Automated Infrastructure pipelines

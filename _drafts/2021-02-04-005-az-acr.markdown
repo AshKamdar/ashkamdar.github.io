@@ -1,0 +1,93 @@
+---
+layout: post
+title: Provision Container Registry  with GitHub Actions
+date: 2021-01-29 00:00:00 +0530
+description: Creating azure container registry (acr) using github actions.
+comments: false
+tags: [Azure, GitHub, CI/CD, GitHub Actions, Azure Container Registry, ACR]
+---
+
+# Container Registries
+
+Azure provides container registry service (ACR) for storing images.
+As part of developing workloads that will eventually run on cluster, we will be creating docker images.
+So ACR will be used for storing these docker images.
+
+ACR will be provisioned with following properties
+
+- **Resource group:** ainc-pmod-eus-dev-001-rg
+- **Location:** East US
+- **ACR Sku:** Basic
+- **ACR Name:** AincPmodDevEusAcr
+
+<u>Note:</u> To understand resource naming convention further, please [visit this link](/004-provision-az-resources/)
+
+### Create pipeline
+
+Create a file named **20-dev-acr.yml** in <u>repoPlatform</u>, as shown below.
+
+```yaml
+name: Create container registry.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/20-dev-acr.yml"
+
+env:
+  DEV_RES_GRP: ainc-pmod-eus-dev-001-rg
+  ACR_NAME: AincPmodDevEusAcr
+  ACR_SKU: Basic
+  LOCATION: eastus
+
+jobs:
+  create-acr:
+    runs-on: ubuntu-latest
+    steps:
+      # Azure Login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: "${{ secrets.AZ_DEV_SUB_CRED }}"
+
+      # Creating ACR
+      - name: Creating ACR
+        uses: azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az acr create \
+              --name ${{ env.ACR_NAME }} \
+              --resource-group ${{ env.DEV_RES_GRP }} \
+              --sku ${{ env.ACR_SKU }} \
+              --location ${{ env.LOCATION }} \
+              --tags scope=project project=pmod env=dev
+```
+
+On commit of this file on repoPlatform, GitHub actions will run and execute this pipeline as shown below
+
+| ![](/assets/img/005/005-az-acr-pipeline-executed-1.png) |
+
+All jobs (two) in pipeline completed
+
+| ![](/assets/img/005/005-az-acr-pipeline-executed-2.png) |
+
+Also, as seen below, we got confirmation that ACR was successfully provisioned in Azure
+
+| ![](/assets/img/005/005-az-acr-created-3.png) |
+
+And we can check in azure portal the same
+
+| ![](/assets/img/005/005-az-acr-created-ok-4.png) |
+
+# Automatic Locking
+
+One interesting thing to observe is that ACR is <u>already locked</u> although we did not have any locking commands in pipeline.
+
+This is because, the resource group (ainc-pmod-eus-dev-001-rg) in which acr was created, is already locked. Hence locking is inherited from parent to child resources in azure.
+
+We want all our resources to be locked, so there is no chance of accidental or unintentional deletion
+
+| ![](/assets/img/005/005-az-acr-locked-5.png) |
