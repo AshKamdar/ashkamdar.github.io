@@ -14,6 +14,39 @@ Having made a case for [adoption of Microservice architecture](/001-architecture
 They say _the best way to learn something is by doing it_.  
 So lets begin a journey of learning how to implement contemporary architectures with latest tools and technologies available at our disposal today, by doing a sample project.
 
+## DevOps
+
+Lets try and understand what does one of the most popular buzzword in IT mean.  
+DevOps represents the techniques employed by an organization for building up capabilities and releasing those capabilities to their audience.  
+It is more of a culture installation in an organization that will help them do things more efficiently and touches upon 3 key assets of an organization, namely **People**, **Process** & **Technology**.
+
+In our case, the technology part of DevOps will make use of the following
+We will be using a public cloud platform for hosting all our IT assets, so that is where Microsoft Azure cloud comes into picture.  
+We will be running our **Compute** in modern way, using Kubernetes.  
+And we will be using the many capabilities offered by GitHub like:
+
+To start with, we are going to use the following:
+
+- <u>Git repositories</u> for storing artifacts and version control.
+- <u>Boards</u> for project management and tracking progress of work items.
+- <u>Pull Request (PR) </u> workflows for merging branches and reviewing changes.
+- <u>CI/CD</u> features like pipeline, github actions that support build, test, deploy and release stages of project
+
+Although Azure cloud provides similar features, we do not want to use them, as that will lock us into using only Azure cloud.  
+Similarly, we choose Kubernetes for compute because it is a cloud agnostic technology and can run similarly on other cloud vendor platforms as well.
+
+This is to prevent cloud vendor lock-in scenarios and hedge against the remote possibility of being required to leave a particular cloud vendor and move totally to another cloud vendor.
+
+So as far as possible, we will use neutral technologies for our core components.
+
+Having said that, there is a fine balance you need to maintain and should not go over board with it, unless you have large teams with enough competence to cater to managing and maintaining everything yourself.
+
+The classic example of it is using **Databases**.  
+Although we have an ability of hosting databases on kubernetes cluster, we will refrain from doing that and will use cloud vendor's managed database offerings. This alleviates responsibility of managing, maintaining and administering databases ourselves and we want to offload these things to cloud vendor.
+
+Same is the case with Kubernetes cluster. Although we have the ability to spin up a couple of VM's and create a multi-node kubernetes cluster in azure ourselves, this is a specialized and full-time job that we do not want to undertake.  
+This is why we are using managed kuberntes offering from azure (AKS), so that we can focus on business capabilities development and release, rather than expending our energies on maintaing a cluster.
+
 ## Sample Project
 
 **Over the years, from my experience, i have observed that the way we learn new technologies and the way they need to be implemented in enterprise projects differ widely**.

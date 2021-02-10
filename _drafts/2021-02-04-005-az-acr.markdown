@@ -7,7 +7,7 @@ comments: false
 tags: [Azure, GitHub, CI/CD, GitHub Actions, Azure Container Registry, ACR]
 ---
 
-# Container Registries
+## Container Registries
 
 Azure provides container registry service (ACR) for storing images.
 As part of developing workloads that will eventually run on cluster, we will be creating docker images.
@@ -82,7 +82,7 @@ And we can check in azure portal the same
 
 | ![](/assets/img/005/005-az-acr-created-ok-4.png) |
 
-# Automatic Locking
+## Automatic Locking
 
 One interesting thing to observe is that ACR is <u>already locked</u> although we did not have any locking commands in pipeline.
 

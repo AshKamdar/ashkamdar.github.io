@@ -1,0 +1,129 @@
+---
+layout: post
+title: Using Azure Monitor service for Log Management, Monitoring & Insights
+date: 2021-01-29 00:00:00 +0530
+description: Creating azure log analytics workspace in azure monitor logs.
+comments: false
+tags:
+  [
+    Azure,
+    GitHub,
+    CI/CD,
+    GitHub Actions,
+    Log Analytics,
+    Workspace,
+    Log Management,
+    Monitoring,
+    Insights,
+  ]
+---
+
+## Azure Monitor Service
+
+This service offering has 2 parts to it
+
+- Azure Monitor Logs
+- Azure Metrics Logs
+
+The following canonical picture depicts what these twin service bundle can offer.
+
+| ![](/assets/img/007/007-az-monitor-overview-1.png) |
+
+## Log Analytics Workspace (LAWS)
+
+A Log Analytics Workspace (laws) is more or less what it sounds.  
+It is like your **In-laws**, always collecting information about you, monitoring you and making judgements (insights) based on data collected. :smile: :smile:
+
+Jokes apart, Log Analytics is the process of collecting logs, storing them and analyzing them for discovering important information.  
+This is supported in azure using a service called **Azure Monitor Logs**.
+
+Here is the official definition straight from horse's mouth (official azure documentation):
+
+"Azure Monitor Logs is a feature of Azure Monitor that collects and organizes log and performance data from monitored resources. Data from different sources such as platform logs from Azure services, log and performance data from virtual machines agents, and usage and performance data from applications can be consolidated into a single workspace so they can be analyzed together using a sophisticated query language that's capable of quickly analyzing millions of records.
+
+You may perform a simple query that just retrieves a specific set of records or perform sophisticated data analysis to identify critical patterns in your monitoring data. Work with log queries and their results interactively using Log Analytics, use them in an alert rules to be proactively notified of issues, or visualize their results in a workbook or dashboard."
+
+So, LAWS is essentially a database that stores logs and these logs can be queried using something called **Kusto Query Language (KQL)**.
+
+In our case, workspace is required for storing logs for resources provisioned on Azure as well as for Azure Kubernetes Service (AKS) cluster logs.
+
+So before we begin to create a cluster, we have to keep a workspace ready, so that we can associate it while creating a new cluster.  
+We will be using 2 separate LAWS. One for <u>Development</u> environment and one for <u>Production</u>.
+
+Azure Monitor Logs can be thought of having 3 main responsibilities.
+
+- Getting data from various sources (depicted on left side)
+- Storing the data efficiently (as shown in middle)
+- Making use of this data for various purposes (right side of the picture)
+
+| ![](/assets/img/007/007-az-monitor-logs-2.png) |
+
+Below picture depicts the capabilities offered for writing kusto queries
+
+| ![](/assets/img/007/007-az-monitor-log-query-3.png) |
+
+### Pipeline
+
+Lets create a pipeline file that can be used to create workspace.  
+Create a file named **40-dev-workspace.yml** in <u>repoPlatform</u>, as shown below.
+
+```yaml
+name: Create Log analytics workspace
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/40-dev-workspace.yml"
+
+env:
+  DEV_RES_GRP: ainc-pmod-eus-dev-001-rg
+  LOCATION: eastus
+  WORKSPACE_NAME: ainc-pmod-eus-dev-ws
+
+jobs:
+  create-loganalytics-workspace:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Azure Login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: "${{ secrets.AZ_DEV_SUB_CRED }}"
+
+      # 2. Creating Log analytics workspace
+      - name: Creating Log analytics workspace
+        uses: azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az monitor log-analytics workspace create \
+              --workspace-name ${{ env.WORKSPACE_NAME }} \
+              --resource-group ${{ env.DEV_RES_GRP }} \
+              --location ${{ env.LOCATION }} \
+              --retention-time 30 \
+              --tags scope=project project=pmod env=dev
+```
+
+On commit of this file, GitHub Actions will kick in and execute this pipeline, as shown below
+![](/assets/img/007/007-az-gh-queued-1.png)
+
+<hr>
+The pipline contains a single job (create-loganalytics-workspace)
+![](/assets/img/007/007-az-gh-job-2.png)
+
+<hr>
+Workspace created successfully
+![](/assets/img/007/007-az-gh-completed-3.png)
+
+<hr>
+It took 1m40s for this pipeline to execute
+![](/assets/img/007/007-az-gh-completed-ok-4.png)
+
+<hr>
+You can check on azure portal
+![](/assets/img/007/007-az-gh-check-5.png)
+
+## Conclusion
+
+For any changes required on configuration of this workspace, the pipeline will be used.

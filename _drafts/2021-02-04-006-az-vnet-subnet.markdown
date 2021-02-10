@@ -7,7 +7,7 @@ comments: false
 tags: [Azure, GitHub, CI/CD, GitHub Actions, Virtual network, vnet, subnet]
 ---
 
-# Azure Networking
+## Azure Networking
 
 Networking is one of the core service offered by Azure.  
 Any resource in azure that deals with IP address (private or public), has to be created under a **Virtual Network (vnet)**.
@@ -85,11 +85,11 @@ jobs:
               --tags scope=project project=pmod env=dev
 ```
 
-On commit of this file on repoPlatform, GitHub actions will queue this pipeline for executino, as shown below
+On commit of this file, GitHub actions will queue this pipeline for execution, as shown below
 
 | ![](/assets/img/006/006-az-vnet-pipeline-1.png) |
 
-The pipline contains 1 job (create-vnet-subnet)
+The pipline contains a single job (create-vnet-subnet)
 
 | ![](/assets/img/006/006-az-vnet-pipeline-2.png) |
 
@@ -105,6 +105,6 @@ And we can check the result in azure portal
 
 | ![](/assets/img/006/006-az-vnet-created-5.png) |
 
-# Conclusion
+## Conclusion
 
 This pipeline can be used to make any changes to this vnet in future.
