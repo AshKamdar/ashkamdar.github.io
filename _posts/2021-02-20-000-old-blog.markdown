@@ -1,0 +1,180 @@
+---
+layout: post
+title: Old blog
+date: 2021-02-20 00:00:00 +0530
+description: Articles from 'AdvenduresInCloud' blog
+comments: true
+tags: [Wordpress, GitHub, GitHub Pages, Jekyll, AWS Cloud, Amazon Web Services]
+---
+
+## Adventures In Cloud blog
+
+Earlier i used to maintain [AdventuresInCloud](https://adventuresincloud.wordpress.com/) blog on wordpress.
+
+However, i felt it constraint by some limitataions and usually the way to get away from it was to upgrade my subscription, which began costing more money. Since i had no plans to monitize it, i started looking for alternative when i wanted to resume blogging.
+
+That is when i found a better way to create my blog **for free** and without any limitations.
+It took a lot of work, but in the end the results were satisfactory.
+
+So this blog is made using **Jekyll** and hosted free of cost on GitHub using **GitHub Pages**.
+
+Below are the links to articles from my old blog.
+
+### 1. [Serverless – more FinDev than DevOps by Yan Cui](https://adventuresincloud.wordpress.com/2019/05/10/serverless-more-findev-than-devops-yan-cui/)
+
+Posted on 10th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-1.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 2. [Cloud-based IDE for Cloud-based Development](https://adventuresincloud.wordpress.com/2019/05/10/cloud-based-ide-for-cloud-based-development/)
+
+Posted on 10th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-2.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 3. [Integrate AWS Cloud9 with GitHub](https://adventuresincloud.wordpress.com/2019/05/11/3-integrate-aws-cloud9-with-github/)
+
+Posted on 11th May 2019 by Ashish Kamdar
+<br>
+
+![](/assets/img/000/000-3.png){:height="55%" width="55%" style="border: 2px solid black"}
+
+<br>
+
+### 4. [From Zero to Hero in Serverless](https://adventuresincloud.wordpress.com/2019/05/13/4-projectx-from-zero-to-hero-in-serverless/)
+
+Posted on 13th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-4.png){:height="20%" width="20%" style="border: 2px solid black"}
+
+<br>
+
+### 5. [Getting Started with AWS Lambda](https://adventuresincloud.wordpress.com/2019/05/14/5-projectx-getting-started-with-aws-lambda/)
+
+Posted on 14th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-5.png){:height="15%" width="15%" style="border: 2px solid black"}
+
+<br>
+
+### 6. [Using AWS API Gateway with AWS Lambda](https://adventuresincloud.wordpress.com/2019/05/15/6-projectx-using-aws-api-gateway-with-aws-lambda/)
+
+Posted on 15th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-6.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 7. [Automating Deployment using AWS CLI](https://adventuresincloud.wordpress.com/2019/05/16/7-projectx-automating-deployment-using-aws-cli/)
+
+Posted on 16th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-7.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 8. [Automating Deployment using AWS CloudFormation](https://adventuresincloud.wordpress.com/2019/05/18/8-projectx-automating-deployment-using-aws-cloudformation-2/)
+
+Posted on 18th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-8.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 9. [Easy Deployment using Claudia.js framework](https://adventuresincloud.wordpress.com/2019/05/19/9-projectx-easy-deployment-using-claudia-js-framework/)
+
+Posted on 19th May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-9.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 10. [Create Book Catalog API using Claudia.js](https://adventuresincloud.wordpress.com/2019/05/23/10-projectx-create-book-catalog-api-using-claudia-js/)
+
+Posted on 23rd May 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-10.png){:height="65%" width="65%" style="border: 2px solid black"}
+
+<br>
+
+### 11. [Using AWS DynamoDB NoSQL database for Persistence](https://adventuresincloud.wordpress.com/2019/06/02/11-projectx-using-aws-dynamodb-nosql-database-for-persistence/)
+
+Posted on 2nd Jun 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-11.png){:height="65%" width="65%" style="border: 2px solid black"}
+
+<br>
+
+### 12. [Deploy Swagger APIs using AWS Serverless Application Model (SAM)](https://adventuresincloud.wordpress.com/2019/06/07/12-projectx-deploy-swagger-apis-using-aws-serverless-application-model-sam/)
+
+Posted on 7th Jun 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-12.png){:height="65%" width="65%" style="border: 2px solid black"}
+
+<br>
+
+### 13. [Serverless framework – Best Deployment option](https://adventuresincloud.wordpress.com/2019/06/09/13-projectx-serverless-framework-best-deployment-option/)
+
+Posted on 9th Jun 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-13.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 14. [Provision multiple zero-cost serverless environments easily](https://adventuresincloud.wordpress.com/2019/06/13/14-projectx-provision-multiple-zero-cost-serverless-environments-easily/)
+
+Posted on 13th Jun 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-14.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 15. [Will GraphQL make REST API paradigm obsolete?](https://adventuresincloud.wordpress.com/2019/06/27/15-will-graphql-make-rest-api-paradigm-obsolete/)
+
+Posted on 27th Jun 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-15.png){:height="65%" width="65%" style="border: 2px solid black"}
+
+<br>
+
+### 16. [Can GraphQL solve REST API’s underfetching problem?](https://adventuresincloud.wordpress.com/2019/06/28/16-can-graphql-solve-rest-apis-underfetching-problem/)
+
+Posted on 28th Jun 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-16.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 17. [Why Cloud Development Kit (CDK) is an AWSome Deployment option](https://adventuresincloud.wordpress.com/2019/07/16/17-why-cloud-development-kit-cdk-is-an-awsome-deployment-option/)
+
+Posted on 16th Jul 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-17.png){:height="45%" width="45%" style="border: 2px solid black"}
+
+<br>
+
+### 18. [Not choosing AWS cloud as Amazon will take away my Business](https://adventuresincloud.wordpress.com/2019/07/17/18-not-choosing-aws-cloud-as-amazon-will-take-away-my-business/)
+
+Posted on 17th Jul 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-18.png){:height="25%" width="25%" style="border: 2px solid black"}
+
+<br>
+
+### 19. [Implementing Microservices using GraphQL, AWS AppSync and DynamoDB](https://adventuresincloud.wordpress.com/2019/07/19/19-implementing-microservices-using-graphql-aws-appsync-and-dynamodb/)
+
+Posted on 19th Jul 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-19.png){:height="65%" width="65%" style="border: 2px solid black"}
+
+<br>
+
+### 20. [Deploying Microservices using AWS Cloud Development Kit (CDK)](https://adventuresincloud.wordpress.com/2019/07/23/20-deploying-microservices-using-aws-cloud-development-kit-cdk/)
+
+Posted on 23rd Jul 2019 by Ashish Kamdar
+
+![](/assets/img/000/000-20.png){:height="65%" width="65%" style="border: 2px solid black"}
