@@ -9,7 +9,7 @@ tags: [Wordpress, GitHub, GitHub Pages, Jekyll, AWS Cloud, Amazon Web Services]
 
 ## Adventures In Cloud blog
 
-Earlier i used to maintain [AdventuresInCloud](https://adventuresincloud.wordpress.com/) blog on wordpress.
+Earlier i used to maintain [AdventuresInCloud](https://adventuresincloud.wordpress.com/) blog on wordpress.com website
 
 However, i felt it constraint by some limitataions and usually the way to get away from it was to upgrade my subscription, which began costing more money. Since i had no plans to monitize it, i started looking for alternative when i wanted to resume blogging.
 
