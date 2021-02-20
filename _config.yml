@@ -10,7 +10,7 @@ site-twitter: https://twitter.com/ash_kamdar #if your site has a twitter account
 # Author Settings
 author: Ashish Kamdar
 author-img: ashish-kamdar.png
-about-author: DevOps with Kubernetes.
+about-author: Azure, Docker, Kubernetes, CI/CD, GitHub, GitLab   
 
 social-twitter: ash_kamdar
 social-facebook:
