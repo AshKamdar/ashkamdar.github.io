@@ -831,8 +831,8 @@ pre code {
 
 table {
   border: 1px solid #aaa;
-  background-color: #eee;
-  width: 100%;
+  background-color: rgb(255, 255, 255);
+  width: 90%;
   text-align: left;
   border-collapse: collapse;
 }
@@ -1507,4 +1507,10 @@ a.newer-posts:hover {
   .post .post-content .post-title a {
     font-size: 21px;
   }
+}
+
+/* For star rating in book review page */
+
+.checked {
+  color: orange;
 }
