@@ -24,7 +24,7 @@ Below are the links to articles from my old blog.
 
 Posted on 10th May 2019 by Ashish Kamdar
 
-![](/assets/img/000/000-1.png){:height="45%" width="45%" style="border: 2px solid black"}
+![](/assets/img/000/000-1.PNG){:height="45%" width="45%" style="border: 2px solid black"}
 
 <br>
 
