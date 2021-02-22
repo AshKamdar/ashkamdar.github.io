@@ -1,9 +1,9 @@
 ---
 layout: post
 title: From Legacy to Contemporary architectures
-date: 2021-01-29 00:00:00 +0530
+date: 2021-02-22 00:00:00 +0530
 description: A journey into evolution of architectures of Enteprise IT systems
-comments: false
+comments: true
 tags:
   [
     Legacy,
