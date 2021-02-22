@@ -2,7 +2,7 @@
 layout: post
 title: From legacy to contemporary architectures
 date: 2021-02-22 00:00:00 +0530
-description: A journey into evolution of Enteprise IT architectures
+description: A journey into evolution of Enterprise IT architectures
 comments: true
 tags:
   [
