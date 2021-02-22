@@ -1514,3 +1514,8 @@ a.newer-posts:hover {
 .checked {
   color: orange;
 }
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

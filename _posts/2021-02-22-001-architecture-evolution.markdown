@@ -1,8 +1,8 @@
 ---
 layout: post
-title: From Legacy to Contemporary architectures
+title: From legacy to contemporary architectures
 date: 2021-02-22 00:00:00 +0530
-description: A journey into evolution of architectures of Enteprise IT systems
+description: A journey into evolution of Enteprise IT architectures
 comments: true
 tags:
   [
@@ -12,10 +12,20 @@ tags:
     Cloud,
     DevOps,
     Docker,
+    Containers,
     Kubernetes,
     Opensource,
   ]
 ---
+
+<table class="center">
+  <tr>
+    <td>
+      <img src="{{ site.url }}{{ site.baseurl }}/assets/img/001/home.jpg">
+      <span>Photo by <a href="https://unsplash.com/@danist07?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">DANIST</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    </td>
+  </tr>
+</table>
 
 ## Inception
 
