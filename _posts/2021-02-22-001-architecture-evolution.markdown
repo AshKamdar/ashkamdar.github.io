@@ -9,6 +9,8 @@ tags:
     Legacy,
     Monolith,
     Microservices,
+    Digital Transformation,
+    Modernization,
     Cloud,
     DevOps,
     Docker,
