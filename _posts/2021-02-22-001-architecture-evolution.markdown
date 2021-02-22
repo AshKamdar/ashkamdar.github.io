@@ -122,7 +122,7 @@ All this has led to enterprises showing a lot of interest in migrating these leg
 ## Cloud computing: The great equalizer
 
 The other game changers is birth of <mark>Cloud computing</mark>.  
-Amazon figured out early in last decade that it could offer its free resources to be used by other enterprses on a pay-per-use basis. This was a win-win as Amazon could make money from their excess capacity while other enterprises would be able to use these services without big and upfront investment costs.
+Amazon figured out early in last decade that it could offer its free resources to be used by other enterprises on a pay-per-use basis. This was a win-win as Amazon could make money from their excess capacity while other enterprises would be able to use these services without big and upfront investment costs.
 
 This enabled the complete stack of Compute, Storage, Networking, Security etc., to be offered as **Software-defined services**. Hence this gave rise to different models in Cloud computing like
 
